@@ -2,7 +2,7 @@ import os
 import glob
 import pandas as pd
 import matplotlib.pyplot as plt
-import src.data.read_functions as rfuncs
+import src.data.gst_sub_functions as rfuncs
 
 def export_log_data(logdir,processedpath):
 
