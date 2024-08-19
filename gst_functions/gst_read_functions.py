@@ -5,8 +5,7 @@ import glob
 import cmocean as cmo
 import sys
 sys.path.append('../')
-import src.data.export_log_data as efuncs
-import src.data.gst_sub_functions as rfuncs
+import gst_functions.gst_sub_functions as gs
 
 def gst_unzip_log_data(logdir):
     ## Unzip all the files (if not unzipped already)
@@ -31,21 +30,21 @@ def gst_read_log_data(logdir, savedir, types):
         files=glob.glob(logdir+'/*'+i+'*')
         if files:
             if i == 'missionmanager':
-                mmdf=rfuncs.readmmlog(logdir,savedir)
+                mmdf=gs.readmmlog(logdir,savedir)
             elif i == 'autopilot':
-                apdf=rfuncs.readautolog(logdir,savedir)
+                apdf=gs.readautolog(logdir,savedir)
             elif i == 'ctd':
-                ctdf=rfuncs.readctdlog(logdir,savedir)    
+                ctdf=gs.readctdlog(logdir,savedir)    
             elif i == 'gps':
-                gpdf=rfuncs.readgpslog(logdir,savedir)            
+                gpdf=gs.readgpslog(logdir,savedir)            
             elif i == 'sbp':
-                sbpdf=rfuncs.readsbplog(logdir,savedir)            
+                sbpdf=gs.readsbplog(logdir,savedir)            
             elif i == 'nav':
-                nvdf=rfuncs.readnavlog(logdir,savedir)            
+                nvdf=gs.readnavlog(logdir,savedir)            
             elif i == 'aanderaa':
-                aandf=rfuncs.readaandlog(logdir,savedir)
+                aandf=gs.readaandlog(logdir,savedir)
             elif i == 'ecopuck':
-                ecopuck=rfuncs.readecolog(logdir,savedir)
+                ecopuck=gs.readecolog(logdir,savedir)
 
                 
     # create merged file
